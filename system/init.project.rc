@@ -1,0 +1,51 @@
+# Import mt8163 rc
+import init.mt8163_amazon.rc
+
+# Device-specific .rc content follows here
+
+on init
+   symlink /dev/block/platform/soc/11230000.mmc/by-name /dev/block/by-name
+   symlink /dev/block/mmcblk0boot0 /dev/block/by-name/preloader
+   symlink /dev/block/mmcblk0p4 /dev/block/by-name/tee_a
+   symlink /dev/block/mmcblk0p6 /dev/block/by-name/tee_b
+
+on post-fs
+   start avahi-daemon
+
+# The Puffin service must be declared at the device-specific level,
+# as it requires device-specific config file parameters for some
+# platforms (e.g. Doebrite).
+service puffin /system/bin/PuffinApp /system/etc/AlexaClientSDKConfig.json /system/etc/OverlayAlexaClientSDKConfig.json
+   class main
+   user puffin
+   group aipc davs dbus inet ace_kvstore ace_group drmrpc system audio keystore cache shell ace_maplite
+   disabled
+
+# perfmonitord
+import init.perfmonitord.rc
+
+# perfhald
+import init.perfhald.rc
+
+# perfrecoveryd
+import init.perfrecoveryd.rc
+
+service avahi-daemon /system/bin/avahi-daemon --no-drop-root
+    user root
+    group dbus
+    disabled
+
+# enable zram
+on property:sys.boot_completed=1
+   # for enabling zram
+   swapon_all /fstab.zram
+   write /proc/sys/vm/page-cluster 0
+   write /proc/sys/vm/swappiness 100
+
+# enable KSM
+   write /sys/kernel/mm/ksm/sleep_millisecs 250
+   write /sys/kernel/mm/ksm/pages_to_scan 100
+   write /sys/kernel/mm/ksm/seeker_sleep_millisecs 50
+   write /sys/kernel/mm/ksm/mode "always"
+   write /sys/kernel/mm/ksm/run 1
+

@@ -1,0 +1,98 @@
+{
+  "comments": "Uxeventd Minerva Config",
+  "configs": [
+    {
+        "ServiceName": "UXEvent",
+        "MethodName": "MEDIA_PLAYER#PlaybackStartReadDataDurationAggregated",
+        "GroupId": "ceih5eij",
+        "SchemaId": "2537/2/01330400",
+        "MetricNameAsKey": true,
+        "Active": true
+    },
+    {
+        "ServiceName": "UXEvent",
+        "MethodName": "MEDIA_PLAYER#PlayerPrimedWhenPlayCalled",
+        "GroupId": "55wunldg",
+        "SchemaId": "hz0h/2/02330400",
+        "MetricNameAsKey": true,
+        "Active": true
+    },
+    {
+        "ServiceName": "UXEvent",
+        "MethodName": "MEDIA_PLAYER#ReggaeFetcher",
+        "GroupId": "6vxbq3mh",
+        "SchemaId": "ej0c/2/01330400",
+        "MetricNameAsKey": true,
+        "Active": true
+    },
+    {
+        "ServiceName": "UXEvent",
+        "MethodName": "MEDIA_PLAYER#ReggaeGenericError",
+        "GroupId": "9306vt1j",
+        "SchemaId": "uk5y/2/02330400",
+        "MetricNameAsKey": true,
+        "Active": true
+    },
+    {
+        "ServiceName": "UXEvent",
+        "MethodName": "MEDIA_PLAYER#ReggaeUnderrun",
+        "GroupId": "mvaf7uw2",
+        "SchemaId": "8mfy/2/02330400",
+        "MetricNameAsKey": true,
+        "Active": true
+    },
+    {
+        "ServiceName": "UXEvent",
+        "MethodName": "MEDIA_PLAYER#TrackPlayedCount",
+        "GroupId": "ls37sk2b",
+        "SchemaId": "s6pm/2/02330400",
+        "MetricNameAsKey": true,
+        "Active": true
+    },
+    {
+      "ServiceName": "uxeventd",
+      "MethodName": "UxSingleAnimationEvent",
+      "GroupId": "gvopt4za",
+      "SchemaId": "ykjn/2/02330410",
+      "Active": true
+    },
+    {
+      "ServiceName": "uxeventd",
+      "MethodName": "uxeventd",
+      "GroupId": "jsr7wty1",
+      "SchemaId": "nb1q/2/02330410",
+      "Active": true
+    },
+    {
+      "ServiceName": "UXEventD",
+      "MethodName": "uxeventd",
+      "GroupId": "jsr7wty1",
+      "SchemaId": "nb1q/2/02330410",
+      "Active": true
+    },
+    {
+      "ServiceName": "uxeventd",
+      "MethodName": "setup",
+      "GroupId": "89wvnu75",
+      "SchemaId": "7k6y/2/02330410",
+      "MetricNameAsKey": true,
+      "Active": true
+    },
+    {
+      "ServiceName": "UXEventD",
+      "MethodName": "setup",
+      "GroupId": "89wvnu75",
+      "SchemaId": "7k6y/2/02330410",
+      "MetricNameAsKey": true,
+      "Active": true
+    },
+    {
+      "ServiceName": "uxeventd",
+      "MethodName": "aipcWrapper",
+      "GroupId": "89wvnu75",
+      "SchemaId": "rugd/2/02330410",
+      "MetricNameAsKey": true,
+      "Active": true
+    }
+  ]
+}

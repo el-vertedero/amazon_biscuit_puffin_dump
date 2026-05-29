@@ -1,0 +1,12 @@
+#Donut_puffin ledcontroller init config
+
+on boot
+    chown ledcontroller ledcontroller /sys/bus/i2c/devices/0-003f/boot_animation
+    chown ledcontroller ledcontroller /sys/bus/i2c/devices/0-003f/led_current
+    chown ledcontroller ledcontroller /sys/bus/i2c/devices/0-003f/frame
+    chown ledcontroller ledcontroller /proc/idme/alsparams
+    chown ledcontroller ledcontroller /sys/devices/soc/10010000.keypad/amz_privacy/privacy_brightness
+
+on property:ledcontroller.restart=1
+    restart ledcontroller
+

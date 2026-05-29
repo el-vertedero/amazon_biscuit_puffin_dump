@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<mixercontrol>
+    <versioncontrol value="2.02">
+    </versioncontrol>
+
+    <!-- set up TI ADCs path -->
+    <kctl name="ADC_A Left Ip Select ADC_A DIF1_L switch" value="1" />
+    <kctl name="ADC_A Right Ip Select ADC_A DIF1_R switch" value="1" />
+    <kctl name="ADC_B Left Ip Select ADC_B DIF1_L switch" value="1" />
+    <kctl name="ADC_B Right Ip Select ADC_B DIF1_R switch" value="1" />
+    <kctl name="ADC_C Left Ip Select ADC_C DIF1_L switch" value="1" />
+    <kctl name="ADC_C Right Ip Select ADC_C DIF1_R switch" value="1" />
+    <kctl name="ADC_D Left Ip Select ADC_D DIF1_L switch" value="1" />
+    <kctl name="ADC_D Right Ip Select ADC_D DIF1_R switch" value="1" />
+
+    <!-- Analog PGA Gain-->
+    <kctl name="ADC_A MICPGA Volume Ctrl" value="40" />
+    <kctl name="ADC_B MICPGA Volume Ctrl" value="40" />
+    <kctl name="ADC_C MICPGA Volume Ctrl" value="40" />
+    <kctl name="ADC_D MICPGA Volume Ctrl" value="40" />
+
+    <!-- PGA Input Selection -->
+    <kctl name="ADC_A DIF1_L Input Gain" value="0" />
+    <kctl name="ADC_A DIF1_R Input Gain" value="0" />
+    <kctl name="ADC_B DIF1_L Input Gain" value="0" />
+    <kctl name="ADC_B DIF1_R Input Gain" value="0" />
+    <kctl name="ADC_C DIF1_L Input Gain" value="0" />
+    <kctl name="ADC_C DIF1_R Input Gain" value="0" />
+    <kctl name="ADC_D DIF1_L Input Gain" value="0" />
+    <kctl name="ADC_D DIF1_R Input Gain" value="0" />
+
+    <!-- Pass mic audio to upper layer without FPGA header -->
+    <kctl name="SpiTimeStamps" value="0" />
+
+    <!-- Enable Playback route -->
+    <kctl name="HPL Output Mixer L_DAC Switch" value="1" />
+    <kctl name="HPR Output Mixer R_DAC Switch" value="1" />
+
+    <!-- These are the initial mixer settings -->
+    <kctl name="Ext_Speaker_Amp_Switch" value="Off" />
+    <kctl name="Audio_DacMux_Setting" value="On" />
+    <kctl name="Ignore Ramp Up" value="Off" />
+    <kctl name="HP Driver Gain Volume" value="0" />
+    <kctl name="biquad coefficients" value="128 0 1 0 0 0 0 0 0 0 0 0 0 0 0 128 0 1 0 0 0 0 0 0 0 0 0 0 0 0 128 0 1 0 0 0 0 0 0 0 0 0 0 0 0 128 0 1 0 0 0 0 0 0 0 0 0 0 0 0 128 0 1 0 0 0 0 0 0 0 0 0 0 0 0 128 0 1 0 0 0 0 0 0 0 0 0 0 0 0 127 247 0 0 128 9 0 0 127 239 0 0 0 17 0 0 0 17 0 0 127 222 0 0 15 0 0" />
+    <!--external_speaker output-->
+    <path name="ext_speaker_output" value="turnon">
+        <kctl name="Audio_DacMux_Setting" value="Off" />
+        <kctl name="Right Channel Only" value="On" />
+        <kctl name="HP Driver Gain Volume" value="6" />
+    </path>
+    <path name="ext_speaker_output" value="turnoff">
+    </path>
+    <!--Lineout-->
+    <path name="ext_headphone_output" value="turnon">
+        <kctl name="Ignore Ramp Up" value="On" />
+        <kctl name="HP Driver Gain Volume" value="11" />
+        <kctl name="Audio_DacMux_Setting" value="On" />
+        <kctl name="Right Channel Only" value="Off" />
+    </path>
+    <path name="ext_headphone_output" value="turnoff">
+        <kctl name="Audio_DacMux_Setting" value="Off" />
+        <kctl name="Right Channel Only" value="On" />
+        <kctl name="Ignore Ramp Up" value="Off" />
+    </path>
+</mixercontrol>
