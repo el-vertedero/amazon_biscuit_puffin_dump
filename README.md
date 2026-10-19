@@ -1,0 +1,14 @@
+# biscuit_puffin-user 6.0 NS65741 8149 amz-p,release-keys
+- manufacturer: amazon
+- platform: mt8163
+- codename: biscuit_puffin
+- flavor: biscuit_puffin-user
+- release: 7.1.2
+- id: NS65741
+- incremental: 0013222532484
+- tags: amz-p,release-keys
+- fingerprint: Amazon/biscuit_puffin/biscuit_puffin:6.0/NS65741/8149N:user/amz-p,release-keys
+- is_ab: true
+- brand: Amazon
+- branch: biscuit_puffin-user-6.0-NS65741-8149-amz-p,release-keys
+- repo: amazon_biscuit_puffin_dump
