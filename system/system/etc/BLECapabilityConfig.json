@@ -1,0 +1,21 @@
+{
+    "applicationProtocols": [
+        {
+            "type": "OTHER",
+            "name": "PHILIPS_BLE",
+            "maxVersion": "4.1",
+            "transportProtocols": [
+                {
+                    "type": "BLE",
+                    "maxVersion": "4.1"
+                }
+            ],
+            "commissioneeTypes": {
+                "displayCategories": [
+                    "LIGHT",
+                    "SMARTPLUG"
+                ]
+            }
+        }
+    ]
+}

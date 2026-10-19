@@ -1,0 +1,5 @@
+# MT8163 eMMC specific rc
+
+on post-fs
+    # provide a usable lk node for OTA system
+    symlink /dev/block/platform/bootdevice/mmcblk0boot0 /dev/block/platform/bootdevice/by-name/lk

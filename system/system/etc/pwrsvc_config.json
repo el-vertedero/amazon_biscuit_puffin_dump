@@ -1,0 +1,30 @@
+{
+    "compatible": "pwrsvc",
+    "version": 1,
+
+    "global": {
+        "autosleep_forbidden": true,
+        "grace_period_ms": 500,
+        "check_treatment_value": false
+    },
+
+    "perflock": {
+        "cpu" : {
+            "normal": [
+                {
+                    "default": true,
+                    "sysfs": true,
+                    "node":"/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor",
+                    "value":"interactive"
+                }
+            ],
+            "performance": [
+                {
+                    "sysfs": true,
+                    "node":"/sys/devices/system/cpu/cpu0/cpufreq/scaling_governor",
+                    "value":"performance"
+                }
+            ]
+        }
+    }
+}
